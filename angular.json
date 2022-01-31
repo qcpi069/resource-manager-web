@@ -103,6 +103,37 @@
             ],
             "scripts": []
           }
+        },
+        "cypress-run": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "resource-manager:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "resource-manager:serve:production"
+            }
+          }
+        },
+        "cypress-open": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "headless": true,
+            "browser": "chrome"
+          }
+        },
+        "e2e": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "resource-manager:serve",
+            "headless": true,
+            "browser": "chrome"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "resource-manager:serve:production"
+            }
+          }
         }
       }
     }
